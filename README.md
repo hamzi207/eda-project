@@ -85,5 +85,14 @@ The stakeholder, **Charles Christensen**, is an investor aiming to identify prof
 ## 📁 Repository Structure
 
 📂 real-estate-analysis/
+┣ 📜 1_Fetching_the_data_eda.ipynb
+┣ 📜 2_Working_Project_eda_data_cleaning.ipynb
+┣ 📜 3_eda_data_analysis.ipynb
 ┣ 📜 EDA.ipynb
+┣ 📜 LICENSE
 ┣ 📜 README.md
+┣ 📜 assignment.md
+┣ 📜 checkfile.ipynb
+┣ 📜 column_names.md
+┣ 📜 requirements.txt
+┣ 📜 workflow.md
