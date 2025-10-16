@@ -87,8 +87,3 @@ The stakeholder, **Charles Christensen**, is an investor aiming to identify prof
 📂 real-estate-analysis/
 ┣ 📜 EDA.ipynb
 ┣ 📜 README.md
-┣ 📂 data/
-┃ ┣ king_county_house_sales_202510101230.json
-┃ ┣ other_data_files.json
-┣ 📂 report/
-┃ ┗ investment_report_charles_christensen.csv
