@@ -1,0 +1,4 @@
+,house_id,zipcode,actual_price,estimated_price,potential_uplift,key_characteristics
+Rank #1,9808700762,98004,"$7,060,000","$13,931,477","+6,871,477","Grade: 11 | Condition: 3 | Sqft: 10,040.0 | Renovated: Yes | Renovated Year: 2001 | Waterfront: Yes"
+Rank #2,2424059170,98006,"$900,000","$3,513,872","+2,613,872","Grade: 12 | Condition: 3 | Sqft: 7,120.0 | Renovated: No | Renovated Year: 0 | Waterfront: No"
+Rank #3,1247600105,98033,"$5,110,000","$7,476,798","+2,366,798","Grade: 12 | Condition: 3 | Sqft: 8,010.0 | Renovated: No | Renovated Year: 0 | Waterfront: Yes"

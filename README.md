@@ -1,98 +1,94 @@
-[![Shipping files](https://github.com/neuefische/ds-eda-project-template/actions/workflows/workflow-03.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/neuefische/ds-eda-project-template/actions/workflows/workflow-03.yml)
-# ds-project-template
+# 🏠 Real Estate Market Analysis for Charles Christensen
 
-Template for creating ds simple projects
+**Goal:**  
+Identify undervalued properties and optimal selling months for maximum ROI using exploratory data analysis and predictive modeling.
 
-## Requirements
+---
 
-- pyenv
-- python==3.11.3
+## 📊 Project Overview
 
-## Setup
+This project analyzes housing sales data from **King County** to support real-estate investment decisions.  
+The stakeholder, **Charles Christensen**, is an investor aiming to identify profitable resale opportunities and favorable sale timings.
 
-One of the first steps when starting any data science project is to create a virtual environment. For this project you have to create this environment from scratch yourself. However, you should be already familiar with the commands you will need to do so. The general workflow consists of... 
+---
 
-* setting the python version locally to 3.11.3
-* creating a virtual environment using the `venv` module
-* activating your newly created environment 
-* upgrading `pip` (This step is not absolutely necessary, but will save you trouble when installing some packages.)
-* installing the required packages via `pip`
+## 🧩 Dataset
 
-At the end, you want to make sure that people who are interested in your project can create an identical environment on their own computer in order to be able to run your code without running into errors. Therefore you can create a `requirements file` and add it to your repository. You can create such a file by running the following command: 
+**Source:** Provided CSV files (`king_county_house_sales_*.csv`)  
+**Rows:** 21,597  
+**Main features:**
 
-```bash
-pip freeze > requirements.txt
-```
+- `sqft_living`, `bedrooms`, `bathrooms`
+- `grade`, `condition`, `view`, `waterfront`
+- `yr_built`, `yr_renovated`
+- `zipcode`, `lat`, `long`
+- Target variable: `price`
 
-*Note: In rare case such a requirements file created with `pip freeze` might not ensure that another (especially M1 chip) user can install and execute it properly. This can happen if libraries need to be compiled (e.g. SciPy). Then it also depends on environment variables and the actual system libraries.*
+---
 
-### Unit testing (Optional)
+## ⚙️ Workflow
 
-If you write python scripts for your data processing methods, you can also write unit tests. In order to run the tests execute in terminal:
+1. **Setup & Imports** – Load required Python libraries.
+2. **Data Loading & Cleaning** – Merge datasets, handle missing values, engineer new features (`renovated`, `month_sold`).
+3. **Exploratory Data Analysis (EDA)** – Visualize distributions, correlations, and price drivers.
+4. **Feature Engineering** – Encode categorical features, apply `log(price)` transformation.
+5. **Modeling** – Train linear regression on log-transformed price (R² ≈ 0.77).
+6. **Evaluation** – Actual vs Predicted and Residual plots confirm reliable model performance.
+7. **Investment Scenarios** – Simulate seasonal price variations and identify top 3 undervalued properties.
+8. **Insights & Recommendations** – Business-oriented findings for Charles.
 
-```bash
-pytest
-```
+---
 
-This command will execute all the functions in your project that start with the word **test**.
+## 📈 Key Results
 
-## Set up your Environment
-This repo contains a requirements.txt file with a list of all the packages and dependencies you will need.
+| Metric                    | Result      | Meaning                              |
+| ------------------------- | ----------- | ------------------------------------ |
+| **R²**                    | 0.77        | Model explains 77% of price variance |
+| **MAE**                   | ~$78,000.00 | Average prediction error of ±14%     |
+| **Best Selling Month**    | **June**    | Highest predicted sale price         |
+| **Least Favorable Month** | **January** | Lowest predicted sale price          |
 
-Before you can start with plotly in Jupyter Lab you have to install node.js (if you haven't done it before).
-- Check **Node version**  by run the following commands:
-    ```sh
-    node -v
-    ```
-    If you haven't installed it yet, begin at `step_1`. Otherwise, proceed to `step_2`.
+**Top 3 Investment Zipcodes:** `98004`, `98006`, `98033`  
+**Exported Report:** `investment_report_charles_christensen.csv`
 
+---
 
-### **`macOS`** type the following commands : 
+## 💡 Insights
 
+- Larger living areas and higher construction grades significantly raise property value.
+- Renovations yield clear returns — upgraded homes are priced 10–15% higher on average.
+- Premium zipcodes and properties with views command strong price premiums.
+- June is the most favorable month for selling, while January has the weakest market activity for selling but better opportunities for buying & investments.
 
-- `Step_1:` Update Homebrew and install Node by following commands:
-    ```sh
-    brew update
-    brew install node
-    ```
+---
 
-- `Step_2:` Install the virtual environment and the required packages by following commands:
+## 💼 Recommendations
 
-    ```BASH
-    pyenv local 3.11.3
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
-### **`WindowsOS`** type the following commands :
+1. Focus investments on high-grade homes with renovation potential.
+2. Acquire properties in profitable neighborhoods (98004, 98006, 98033).
+3. Plan resales around **June** for peak returns.
+4. Avoid January listings when buyer demand is low.
+5. Plan Investments/buying in January.
+6. Use this predictive model for pre-purchase ROI estimation.
 
+---
 
-- `Step_1:` Update Chocolatey and install Node by following commands:
-    ```sh
-    choco upgrade chocolatey
-    choco install nodejs
-    ```
+## 🧰 Tools Used
 
-- `Step_2:` Install the virtual environment and the required packages by following commands.
+- **Python** (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, GeoPandas)
+- **Jupyter Notebook** for analysis and visualization
+- **GitHub** for project version control and documentation
+- **Google Slides** for presentations
 
-   For `PowerShell` CLI :
+---
 
-    ```PowerShell
-    pyenv local 3.11.3
-    python -m venv .venv
-    .venv\Scripts\Activate.ps1
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
+## 📁 Repository Structure
 
-    For `Git-Bash` CLI :
-  
-    ```BASH
-    pyenv local 3.11.3
-    python -m venv .venv
-    source .venv/Scripts/activate
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
- 
+📂 real-estate-analysis/
+┣ 📜 EDA.ipynb
+┣ 📜 README.md
+┣ 📂 data/
+┃ ┣ king_county_house_sales_202510101230.json
+┃ ┣ other_data_files.json
+┣ 📂 report/
+┃ ┗ investment_report_charles_christensen.csv
