@@ -85,6 +85,16 @@ The stakeholder, **Charles Christensen**, is an investor aiming to identify prof
 ## 📁 Repository Structure
 
 📂 real-estate-analysis/
+┣ 📂 data/
+┃ ┗ Zipcodes_for_King_County_and_Surrounding_Area___zipcode_area.xml
+┣ 📂 optional/
+┃ ┗ __init__.py
+┃ ┗ data_processing.py
+┃ ┗ sample_notebook.ipynb
+┃ ┗ test_data_imputation.py
+┃ ┗ test_data_transformation.py
+┣ 📂 reports/
+┃ ┗ investment_report_charles_christensen.csv
 ┣ 📜 1_Fetching_the_data_eda.ipynb
 ┣ 📜 2_Working_Project_eda_data_cleaning.ipynb
 ┣ 📜 3_eda_data_analysis.ipynb
